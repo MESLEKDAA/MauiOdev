@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiOdev.RenkSayfasi"
+             Title="Renk Seçici">
+
+    <!-- 
+        Sayfanın ana yerleşimine (VerticalStackLayout) 'x:Name="mainLayout"' veriyoruz.
+        Bu, C# kod-arkasından bu düzenin 'BackgroundColor' (Arka Plan Rengi) özelliğine
+        erişip dinamik olarak değiştirebilmemiz için gereklidir.
+    -->
+    <VerticalStackLayout x:Name="mainLayout" Padding="20" Spacing="15">
+
+        <Label x:Name="titleLabel" Text="RGB Renk Seçici" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+
+        <!-- Seçilen rengin önizlemesini gösteren Frame (Çerçeve). -->
+        <Frame x:Name="colorPreview"
+               HeightRequest="100"
+               CornerRadius="10"
+               BorderColor="Gray" />
+
+        <!-- Kırmızı (Red) kanalını (0-255) ayarlamak için Slider. -->
+        <Label x:Name="labelRed" Text="Kırmızı: 128" />
+        <Slider x:Name="sliderRed" Minimum="0" Maximum="255" Value="128" ValueChanged="OnColorSliderChanged" />
+
+        <!-- Yeşil (Green) kanalını (0-255) ayarlamak için Slider. -->
+        <Label x:Name="labelGreen" Text="Yeşil: 128" />
+        <Slider x:Name="sliderGreen" Minimum="0" Maximum="255" Value="128" ValueChanged="OnColorSliderChanged" />
+
+        <!-- Mavi (Blue) kanalını (0-255) ayarlamak için Slider. -->
+        <Label x:Name="labelBlue" Text="Mavi: 128" />
+        <Slider x:Name="sliderBlue" Minimum="0" Maximum="255" Value="128" ValueChanged="OnColorSliderChanged" />
+
+        <!-- Oluşturulan rengin Hex kodunu (#RRGGBB) gösteren etiket. -->
+        <Label x:Name="labelHex"
+               Text="#808080"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="10" />
+
+        <!-- Butonlar -->
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Button Text="Rastgele Renk" Clicked="OnRandomClicked" />
+            <Button Text="Kodu Kopyala" Clicked="OnCopyClicked" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

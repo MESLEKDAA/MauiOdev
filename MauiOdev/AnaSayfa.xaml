@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiOdev.AnaSayfa"
+             Title="Ana Sayfa">
+
+    <!-- 
+        ScrollView, içeriğin ekrana sığmaması durumunda 
+        kaydırma çubuğu çıkararak taşmayı engeller.
+    -->
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20"
+            VerticalOptions="Center">
+
+            <!-- 
+                Profil resmi. 'profil.jpg' kaynağı, 'Resources/Images/'
+                klasöründen alınır ve MAUI tarafından otomatik olarak işlenir.
+            -->
+            <Image
+                Source="profil.jpg"
+                HeightRequest="200"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Aspect="AspectFill"
+                SemanticProperties.Description="Öğrenci profil resmi">
+                <Image.Clip>
+                    <!-- 
+                        Görüntüyü dairesel (daire şeklinde) kırpmak için 
+                        EllipseGeometry (Elips Geometrisi) kullanılır.
+                        Merkez (100,100) ve yarıçaplar (100,100) olarak ayarlanmıştır.
+                    -->
+                    <EllipseGeometry Center="100,100" RadiusX="100" RadiusY="100" />
+                </Image.Clip>
+            </Image>
+
+            <!-- Statik öğrenci bilgilerini gösteren etiketler (Label) -->
+            <Label
+                Text="Emirhan Özgen"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="23010310062"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Görsel Programlama Ödevi"
+                FontSize="16"
+                HorizontalOptions="Center"
+                FontAttributes="Italic" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

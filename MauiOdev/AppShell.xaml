@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiOdev.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiOdev"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiOdev">
+
+    <!-- 
+        Uygulamanın ana navigasyon yapısı (Tab Bar).
+        TabBar, ekranın altındaki sekme çubuğunu tanımlar.
+    -->
+    <TabBar>
+
+        <!-- Ana Sayfa Sekmesi -->
+        <Tab Title="Ana Sayfa" Icon="home.png">
+            <!-- 
+                Her sekme (Tab), bir ShellContent'e ev sahipliği yapar.
+                ContentTemplate, bu sekme açıldığında hangi sayfanın (local:AnaSayfa) yükleneceğini belirtir.
+            -->
+            <ShellContent
+                Title="Ana Sayfa"
+                ContentTemplate="{DataTemplate local:AnaSayfa}"
+                Route="AnaSayfa" />
+        </Tab>
+
+        <!-- Kredi Hesaplama Sekmesi -->
+        <Tab Title="Kredi" Icon="calculator.png">
+            <ShellContent
+                Title="Kredi Hesaplama"
+                ContentTemplate="{DataTemplate local:KrediSayfasi}"
+                Route="KrediSayfasi" />
+        </Tab>
+
+        <!-- VKİ Hesaplama Sekmesi -->
+        <Tab Title="VKİ" Icon="person.png">
+            <ShellContent
+                Title="VKİ Hesaplama"
+                ContentTemplate="{DataTemplate local:VkiSayfasi}"
+                Route="VkiSayfasi" />
+        </Tab>
+
+        <!-- Renk Seçici Sekmesi -->
+        <Tab Title="Renk" Icon="paint.png">
+            <ShellContent
+                Title="Renk Seçici"
+                ContentTemplate="{DataTemplate local:RenkSayfasi}"
+                Route="RenkSayfasi" />
+        </Tab>
+
+    </TabBar>
+
+</Shell>

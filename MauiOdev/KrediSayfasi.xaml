@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiOdev.KrediSayfasi"
+             Title="Kredi Hesaplama">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Kredi Hesaplama Aracı" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <!-- Kredi Türü Seçimi -->
+            <Frame Padding="10" CornerRadius="10">
+                <Picker x:Name="pickerCreditType" Title="Kredi Türünü Seçin">
+                    <!-- Picker'ın seçenekleri (ItemsSource) C# kod-arkasında atanacaktır -->
+                </Picker>
+            </Frame>
+
+            <!-- Kredi Tutarı Girişi. Sadece sayısal klavye (Numeric) açılır. -->
+            <Frame Padding="5" CornerRadius="10">
+                <Entry x:Name="entryAmount" Placeholder="Kredi Tutarı (Örn: 50000)" Keyboard="Numeric" />
+            </Frame>
+
+            <!-- Yıllık Faiz Oranı Girişi. Sadece sayısal klavye (Numeric) açılır. -->
+            <Frame Padding="5" CornerRadius="10">
+                <Entry x:Name="entryRate" Placeholder="Yıllık Faiz Oranı (%) (Örn: 24.5)" Keyboard="Numeric" />
+            </Frame>
+
+            <!-- Vade Seçimi için Slider -->
+            <Label x:Name="labelTerm" Text="Vade (Ay): 12" FontSize="16" />
+            <Slider x:Name="sliderTerm"
+                    Minimum="1"
+                    Maximum="120" 
+                    Value="12"
+                    ValueChanged="sliderTerm_ValueChanged" />
+
+            <!-- Hesaplamayı tetikleyecek buton -->
+            <Button Text="Hesapla"
+                    FontAttributes="Bold"
+                    CornerRadius="20"
+                    Clicked="btnCalculate_Clicked" />
+
+            <!-- Sonuç Alanı: Hesaplama sonuçları bu etikete yazılacak -->
+            <Frame Padding="15" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Hesaplama Sonucu:" FontSize="18" FontAttributes="Bold" />
+                    <Label x:Name="labelResult" Text="" FontSize="16" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

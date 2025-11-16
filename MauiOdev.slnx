@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Çözüm Öğeleri/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="MauiOdev/MauiOdev.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
